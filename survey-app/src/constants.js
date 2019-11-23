@@ -1,0 +1,18 @@
+/* 
+    Application Wide Constants
+*/
+//Reducer type
+
+const REDUCER_TYPES = {
+  GET_USERS_REQ_STARTED: "GET_USERS_REQ_STARTED",
+  GET_USERS_REQ_COMPLETED: "GET_USERS_REQ_COMPLETED",
+  GET_USER_REQ_STARTED: "GET_USER_REQ_STARTED",
+  GET_USER_REQ_COMPLETED: "GET_USER_REQ_COMPLETED",
+  GET_USER_FETCH_FAILED: "FETCH_FAILED"
+};
+
+const API_CLIENT = {
+  URL: "https://randomuser.me/api/?results=10"
+};
+
+export { REDUCER_TYPES, API_CLIENT };

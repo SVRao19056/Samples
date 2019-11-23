@@ -1,0 +1,34 @@
+{
+  "gender": "male",
+  "name": { "title": "Mr", "first": "Clyde", "last": "Foster" },
+  "location": {
+    "street": { "number": 3756, "name": "E Little York Rd" },
+    "city": "Irvine",
+    "state": "Oregon",
+    "country": "United States",
+    "postcode": 62061,
+    "coordinates": { "latitude": "87.0815", "longitude": "-124.8352" },
+    "timezone": { "offset": "-3:30", "description": "Newfoundland" }
+  },
+  "email": "clyde.foster@example.com",
+  "login": {
+    "uuid": "344637b9-e809-4c88-a464-e143edefaf48",
+    "username": "happyfish920",
+    "password": "debra",
+    "salt": "3IcKVIGP",
+    "md5": "e6cb35db9dc5645071253ecbc7aca207",
+    "sha1": "7c5e0d28c4c34fb2ddc58ae11b55f85348d9955f",
+    "sha256": "59dfa0696553688f495b713072cec581aa1eb0da7277ecb93b43f20da345e2e2"
+  },
+  "dob": { "date": "1948-04-08T01:24:12.420Z", "age": 71 },
+  "registered": { "date": "2007-08-28T08:33:02.627Z", "age": 12 },
+  "phone": "(989)-969-3558",
+  "cell": "(710)-289-5955",
+  "id": { "name": "SSN", "value": "458-81-2819" },
+  "picture": {
+    "large": "https://randomuser.me/api/portraits/men/21.jpg",
+    "medium": "https://randomuser.me/api/portraits/med/men/21.jpg",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/21.jpg"
+  },
+  "nat": "US"
+}
