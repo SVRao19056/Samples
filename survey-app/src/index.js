@@ -10,7 +10,7 @@ import initialState from "../src/store/initialState";
 //import * as serviceWorker from "./serviceWorker";
 import UserList from "./containers/UserList";
 
-require("C:\\dev\\gitClones\\SVR-Samples\\React\\survey-app\\survey-app\\src\\stylesheets\\index.css");
+require(".\\stylesheets\\index.css");
 const store = configureStore(initialState);
 
 const renderApp = () => (
