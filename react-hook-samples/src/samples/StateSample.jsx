@@ -89,4 +89,4 @@ function Count(props) {
     </div>
   );
 }
-export { Count, History, Parent };
+export { Count, History, Parent, StateSample };

@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Parent } from "./samples/StateSample";
+import { Parent, StateSample } from "./samples/StateSample";
 
 function App() {
   return (
