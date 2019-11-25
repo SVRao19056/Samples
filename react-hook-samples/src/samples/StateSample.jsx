@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { tsPropertySignature } from "@babel/types";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { GridList } from "@material-ui/core";
 
 /**
  * Sample I:
@@ -10,10 +12,26 @@ function StateSample() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      <h1>State Hook sample </h1>
-      <hr />
-      <p> this is current count {count} </p>
-      <button onClick={() => setCount(count + 1)}>Increment Count </button>
+      <Grid>
+        Sample I
+        <Grid container justify={"center"} spacing={3}>
+          <Grid
+            container
+            justify={"center"}
+            allign-items={true}
+            xs={12}
+            spacing={5}
+          >
+            <h1>State Hook sample </h1>''
+          </Grid>
+          <Grid columns={3} alignItems={"flex-end"}>
+            <p> this is current count {count} </p>
+            <button onClick={() => setCount(count + 1)}>
+              Increment Count{" "}
+            </button>
+          </Grid>
+        </Grid>
+      </Grid>
     </div>
   );
 }
