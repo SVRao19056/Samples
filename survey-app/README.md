@@ -2,4 +2,4 @@ The inspiration for this sample is from https://medium.com/snacknation-engineeri
 
 The above article provided the scafolding for this approach Kudos to the author Jasmine Bamou (https://medium.com/@jasmine.bamou?source=post_page-----32fd89b4ebab----------------------)
 .
-This aricle was unlike most of the React demos which provided a limited functionality but provided a complete solution resembling a real life solution.
+This aricle provided a complete solution resembling a real life solution.This is  unlike most of the React demos which showcases the specific feature without any guidance on how it would fit into a real life scenario
