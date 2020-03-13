@@ -1,0 +1,4 @@
+ToDoApi/bin/*
+ToDoApi/obj/*
+/ToDoList.Tests/bin/*
+/ToDoList.Tests/obj/*
