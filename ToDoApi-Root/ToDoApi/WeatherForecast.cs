@@ -1,7 +1,12 @@
 using System;
+using System.Collections.Generic;
 
 namespace ToDoApi
 {
+    public class WeatherForecastList
+    {
+        public WeatherForecast[] List {get;set;}
+}
     public class WeatherForecast
     {
         public DateTime date { get; set; }

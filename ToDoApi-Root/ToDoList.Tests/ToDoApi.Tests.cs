@@ -1,6 +1,8 @@
+using System;
 using NUnit.Framework;
 using NSuperTest;
 using ToDoApi;
+
 
 namespace ToDoListTest
 {
@@ -22,18 +24,36 @@ namespace ToDoListTest
            // console.log("in Set Up");
         }
 
-        [Test]
-        public void Test1()
+        [Test(Description="This is a smoke test which verifies basic functionality")]
+        public void SmokeTest()
         {
             server.Get("/WeatherForecast")
             .Set("Accept", "application/json")
             .Expect(200)
-          //  .End()
-            .End<WeatherForecast>( (i,p) => {
-                Assert.IsNotNull(i);
-                Assert.IsNotNull(p);
+            .End<WeatherForecastList>( (i,p) => {
+                Assert.IsNotNull(i ,"expected {0} but actual value is null",typeof(System.Net.Http.HttpResponseMessage));
+                Assert.IsNotNull(p,"expected {0} but actual value is null",typeof(WeatherForecastList));
             });
-           // Assert.Pass();
+           
+        }
+
+        [Test(Description="This is check valid type is returned")]
+        public void ValidTypeTest()
+        {
+           
+            server.Get("/WeatherForecast")
+            .Set("Accept", "application/json")
+            .Expect(200)
+            .End<WeatherForecastList>( (i,p) => {
+                //var resHdrs = i.Headers;
+                var now = DateTime.Now;
+                TimeSpan? diff = DateTime.Now - i.Headers.Date;
+                Assert.IsTrue(diff.HasValue);
+                Assert.IsTrue(diff.HasValue?diff.Value.Minutes<=2:false );
+              
+                Assert.IsTrue(p.List.Length==5 , "Expected list to have some items and not {0}",p.List.Length);
+            });
+           
         }
     }
 }

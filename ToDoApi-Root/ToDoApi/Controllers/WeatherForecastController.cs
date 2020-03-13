@@ -9,7 +9,7 @@ namespace ToDoApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : Controller
     {
         private static readonly string[] Summaries = new[]
         {
@@ -23,17 +23,21 @@ namespace ToDoApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpHead("//WeatherForecast")]
+        [HttpGet("//WeatherForecast")]
+        public JsonResult Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var res =  Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 date = DateTime.Now.AddDays(index),
                 temperatureC = rng.Next(-20, 55),
                 summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+            var list = new WeatherForecastList();
+            list.List = res;
+            return Json(list);
         }
     }
 }
