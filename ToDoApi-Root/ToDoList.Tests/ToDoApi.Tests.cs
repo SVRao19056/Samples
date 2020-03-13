@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using NSuperTest;
 using ToDoApi;
+using ToDoApi.Models;
 
 
 namespace ToDoListTest
@@ -24,8 +26,21 @@ namespace ToDoListTest
            // console.log("in Set Up");
         }
 
-        [Test(Description="This is a smoke test which verifies basic functionality")]
-        public void SmokeTest()
+        [Test(Description="This is a smoke test which verifies basic functionality of ToDo controller GET action")]
+        public void ToDo_SmokeTest()
+        {
+            server.Get("/ToDo")
+            .Set("Accept", "application/json")
+            .Expect(200)
+            .End<ToDoList>( (i,p) => {
+                Assert.IsNotNull(i ,"expected {0} but actual value is null",typeof(System.Net.Http.HttpResponseMessage));
+                Assert.IsNotNull(p,"expected {0} but actual value is null",typeof(ToDoList));
+            });
+           
+        }
+
+        [Test(Description="This is a smoke test which verifies basic functionality of WeatherForecast controller GET action")]
+        public void WeatherForecast_SmokeTest()
         {
             server.Get("/WeatherForecast")
             .Set("Accept", "application/json")
@@ -36,6 +51,7 @@ namespace ToDoListTest
             });
            
         }
+
 
         [Test(Description="This is check valid type is returned")]
         public void ValidTypeTest()
