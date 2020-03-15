@@ -4,11 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ToDoApi.Models;
 
 namespace ToDoApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    /// <summary>
+    ///  This is a bare bones Web Api scafolding required to show case unit testing with NSuperTest 
+    /// </summary>
     public class WeatherForecastController : Controller
     {
         private static readonly string[] Summaries = new[]
