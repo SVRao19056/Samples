@@ -1,5 +1,5 @@
 import React from "react";
-import { render, ReactDOM } from "react-dom";
+import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { IntlProvider } from "react-intl";

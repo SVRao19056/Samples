@@ -2,10 +2,10 @@ import { combineReducers } from "redux";
 import initialState from "../store/initialState";
 import { REDUCER_TYPES } from "../constants";
 
-const randomReducer = (state = initialState, action) => {
-  // Write your reducer here
-  console.log("in randomReducer");
-};
+// const randomReducer = (state = initialState, action) => {
+//   // Write your reducer here
+//   console.log("in randomReducer");
+// };
 const startReq = (state = initialState, action) => {
   let updatedState;
   switch (action.type) {
