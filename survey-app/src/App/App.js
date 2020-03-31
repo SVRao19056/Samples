@@ -1,11 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-// import { bindActionCreators } from "redux";
-// import logo from "../assets/logo.svg";
 import "../stylesheets/App.css";
 
 import { getUsers } from "../actions";
-// import { REDUCER_TYPES, API_CLIENT } from "../constants";
 import UserList from "../containers/UserList";
 
 const mapDispatchToProps = dispatch => {

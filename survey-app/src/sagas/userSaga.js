@@ -4,7 +4,6 @@ import { REDUCER_TYPES } from "../constants";
 
 async function callApi() {
   const response = await axios.get("https://randomuser.me/api/?results=10");
-  // console.log(JSON.stringify(response));
   return response;
 }
 // async function* catApiErrRes() {
