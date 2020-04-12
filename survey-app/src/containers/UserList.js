@@ -1,18 +1,34 @@
+/**
+ * Style inspried by https://blog.logrocket.com/the-material-ui-grid-system/
+ */
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
+import { Typography } from "@material-ui/core";
 import User from "../components/User";
 
+const classes = {
+  root: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly",
+    elevation: 0,
+  },
+  paper: {
+    elevation: 0,
+    padding: 20,
+    textAlign: "center",
+  },
+  message: {},
+};
 class UserList extends Component {
   state = {
     users: [],
-    searchString: ""
+    searchString: "",
   };
 
   getDerivedStateFromProps(props, state) {
     console.log("getDerivedStateFromProps loaded");
-
-    // this.setState({ users: Object.values(props.users) });
   }
   componentWillRecieveProps(props) {
     console.log(...{ name: "componentWillRecieveProps" });
@@ -26,22 +42,26 @@ class UserList extends Component {
     return (
       <div>
         {dataReady ? (
-          <Grid container spacing={24} style={{ padding: 24 }}>
-            {userArr.map(curUser => (
-              <Grid item xs={12} sm={6} lg={4} xl={3}>
-                <User user={curUser} dataLoaded={dataReady} />
-              </Grid>
-            ))}
-          </Grid>
+          <div className={classes.root}>
+            <Grid container spacing={2}>
+              {userArr.map((curUser) => (
+                <Grid item elevation={0}>
+                  <User user={curUser} dataLoaded={dataReady} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
         ) : (
-          <h4>No users </h4>
+          <Typography variant="h5">
+            Users not yet loaded , click Get Users button to get first payload
+          </Typography>
         )}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const results = !state.startReq.results
     ? { status: `${!state.fetching ? "none" : "fetching data"}` }
     : !state.startReq.results
@@ -55,7 +75,7 @@ const mapStateToProps = state => {
   );
 
   return {
-    users: results
+    users: results,
   };
 };
 export default connect(mapStateToProps, null)(UserList);

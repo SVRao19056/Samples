@@ -13,12 +13,13 @@ import { makeStyles } from "@material-ui/styles";
  */
 const useStyles = makeStyles({
   card: {
-    maxWidth: 345
+    maxWidth: 180,
+    margin: 50,
   },
   media: {
-    height: 50,
-    width: 50
-  }
+    height: 120,
+    width: 120,
+  },
 });
 const User = ({ user, dataLoaded }) => {
   console.log(`DATALOADED = ${dataLoaded} ${JSON.stringify(user)}`);
@@ -29,11 +30,11 @@ const User = ({ user, dataLoaded }) => {
         <CardMedia
           className={classes.media}
           image={user["picture"]["thumbnail"]}
-          title={user["name"]["first"]}
+          title={user["name"]["first"] + " " + user["name"]["last"]}
         />
         <CardContent>
           <Typography>
-            name = {`${user["name"]["first"]} ${user["name"]["last"]}`}
+            {`${user["name"]["first"]} ${user["name"]["last"]}`}
           </Typography>
         </CardContent>
         <CardActions></CardActions>
