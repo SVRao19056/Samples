@@ -27,9 +27,6 @@ class UserList extends Component {
     searchString: "",
   };
 
-  getDerivedStateFromProps(props, state) {
-    console.log("getDerivedStateFromProps loaded");
-  }
   componentWillRecieveProps(props) {
     console.log(...{ name: "componentWillRecieveProps" });
   }

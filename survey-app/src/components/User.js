@@ -4,6 +4,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { makeStyles } from "@material-ui/styles";
 
 /**
@@ -13,12 +14,13 @@ import { makeStyles } from "@material-ui/styles";
  */
 const useStyles = makeStyles({
   card: {
-    maxWidth: 180,
+    maxWidth: 260,
+    minWidth: 230,
     margin: 50,
   },
   media: {
-    height: 120,
-    width: 120,
+    height: 100,
+    // width: 100,
   },
 });
 const User = ({ user, dataLoaded }) => {
@@ -29,13 +31,15 @@ const User = ({ user, dataLoaded }) => {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={user["picture"]["thumbnail"]}
+          image={user["picture"]["medium"]}
           title={user["name"]["first"] + " " + user["name"]["last"]}
         />
         <CardContent>
           <Typography>
             {`${user["name"]["first"]} ${user["name"]["last"]}`}
           </Typography>
+          <MailOutlineIcon fontSize={"medium"}></MailOutlineIcon>{" "}
+          <span>{user.email}</span>
         </CardContent>
         <CardActions></CardActions>
       </Card>
